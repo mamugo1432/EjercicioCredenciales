@@ -28,10 +28,8 @@ class EjercicioCredencialesCredencialesTests {
 	public void esPassSeguraTest() {
 		assertFalse(credencial.esPasswordSegura());
 		credencial.setPassword("12345678m");
-		assertTrue(credencial.comprobarPassword("12345678m"));
+		assertTrue(credencial.esPasswordSegura());
 	}
-	
-	
 	
 	
 }
