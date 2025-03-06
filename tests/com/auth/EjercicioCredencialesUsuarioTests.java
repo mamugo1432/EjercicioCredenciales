@@ -1,6 +1,6 @@
 package com.auth;
 
-import static org.junit.Assert.assertFalse;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeAll;
@@ -22,7 +22,7 @@ class EjercicioCredencialesUsuarioTests {
 	}
 	
 	@Test
-	void testEsCuentaBloqueada() {
+	void testEsCuentaBloqueadaDeUsuario1() {
 		assertFalse(usuario1.esCuentaBloqueada());
 		usuario1.hacerLogin("asdgf", "ags");
 		usuario1.hacerLogin("asdgf", "ags");
@@ -45,5 +45,13 @@ class EjercicioCredencialesUsuarioTests {
 		assertFalse(usuario2.esPasswordSegura());
 		assertFalse(usuario1.esPasswordSegura());
 	} 
-
+	
+	@Test
+	void testHacerLoginUsuario2() {
+		
+		assertTrue(usuario2.hacerLogin("KilMba100", "kuhsfd"));
+		assertFalse(usuario2.hacerLogin("KilMba100", "1234"));
+		assertFalse(usuario2.hacerLogin("KilMba100", null));
+		
+	}
 }
