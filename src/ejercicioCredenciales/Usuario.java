@@ -35,7 +35,7 @@ public class Usuario {
 			System.out.println("CUENTA BLOQUEADA!!");
 		}
 		
-		if(this.credencial.comprobarPassword(oldpass) && !oldpass.equals(newpass) && !newpass.equals(newpassverif)){
+		else if(this.credencial.comprobarPassword(oldpass) && !oldpass.equals(newpass) && !newpass.equals(newpassverif)){
 			newpass=newpassverif;
 			this.credencial.setPassword(newpassverif);
 			esPassModificable=true;
@@ -57,7 +57,7 @@ public class Usuario {
 		}
 		else {
 	
-		if(username == this.credencial.getUsername() && this.credencial.comprobarPassword(password)) {
+		if(username.equals(this.credencial.getUsername()) && this.credencial.comprobarPassword(password)) {
 			esLoginCorrecto=true;
 		}
 		else {
