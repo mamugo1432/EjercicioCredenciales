@@ -8,7 +8,7 @@ public class Credencial {
 	
 	public Credencial(String nombre, String apellidos, String password) {
 	
-		this.username = nombre.substring(0, 2) + apellidos.substring(0, 2) + Integer.valueOf(secuencia + 100);
+		this.username = nombre.substring(0, 3) + apellidos.substring(0, 3) + Integer.valueOf(secuencia + 100);
 		this.password = password;
 		
 	}
