@@ -23,19 +23,19 @@ public class Credencial {
 	
 	public boolean esPasswordSegura() {
 		
-		boolean esMayusc=false, esDigito=false;
+		boolean esMin=false, esDigito=false;
 		
 		for(int i=0; i<this.password.length(); i++ ) {
 		if(Character.isDigit(this.password.charAt(i))) {
 			esDigito=true;
 		}else {
 			if(Character.isLowerCase(this.password.charAt(i))) {
-				esMayusc=true;
+				esMin=true;
 			}
 		}
 		}
 		
-		return esDigito && esMayusc && this.password.length()>=8;
+		return esDigito && esMin && this.password.length()>=8;
 	}
 	
 	public void setPassword(String newpass) {
