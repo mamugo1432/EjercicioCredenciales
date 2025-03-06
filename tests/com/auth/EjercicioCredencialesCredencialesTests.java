@@ -31,5 +31,11 @@ class EjercicioCredencialesCredencialesTests {
 		assertTrue(credencial.esPasswordSegura());
 	}
 	
+	@Test
+	public void getUsernameTest() {
+		assertEquals("AntSan100",credencial.getUsername());
+		assertNotEquals("AnSa101",credencial.getUsername());
+		assertNotEquals(null,credencial.getUsername());
+	}
 	
 }
