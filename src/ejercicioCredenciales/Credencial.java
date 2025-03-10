@@ -1,5 +1,7 @@
 package ejercicioCredenciales;
 
+import java.util.Objects;
+
 public class Credencial {
 
 	private String username;
@@ -8,7 +10,7 @@ public class Credencial {
 	
 	public Credencial(String nombre, String apellidos, String password) {
 	
-		this.username = nombre.substring(0, 2) + apellidos.substring(0, 2) + Integer.valueOf(secuencia + 100);
+		this.username = nombre.substring(0, 2) + apellidos.substring(0, 2) + Integer.valueOf(secuencia++ + 100);
 		this.password = password;
 		
 	}
@@ -23,19 +25,19 @@ public class Credencial {
 	
 	public boolean esPasswordSegura() {
 		
-		boolean esMayusc=false, esDigito=false;
+		boolean esMinusc=false, esDigito=false;
 		
 		for(int i=0; i<this.password.length(); i++ ) {
 		if(Character.isDigit(this.password.charAt(i))) {
 			esDigito=true;
 		}else {
 			if(Character.isLowerCase(this.password.charAt(i))) {
-				esMayusc=true;
+				esMinusc=true;
 			}
 		}
 		}
 		
-		return esDigito && esMayusc && this.password.length()>=8;
+		return esDigito && esMinusc && this.password.length()>=8;
 	}
 	
 	public void setPassword(String newpass) {
@@ -46,7 +48,11 @@ public class Credencial {
 	public String toString() {
 		return "Credencial [username=" + this.username + ", password=" + "*".repeat(this.password.length()) + "]";
 	}
+
+	
+	}
+	
 	
 	
 
-}
+
