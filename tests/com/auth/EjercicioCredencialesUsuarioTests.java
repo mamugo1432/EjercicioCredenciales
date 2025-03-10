@@ -28,6 +28,7 @@ class EjercicioCredencialesUsuarioTests {
 		usuario1.hacerLogin("asdgf", "ags");
 		usuario1.hacerLogin("asdgf", "ags");
 		assertTrue(usuario1.esCuentaBloqueada());
+		usuario2.hacerLogin("KiMb101", "kuhsfd");
 	}
 
 	@Test
@@ -45,5 +46,14 @@ class EjercicioCredencialesUsuarioTests {
 		assertFalse(usuario2.esPasswordSegura());
 		assertFalse(usuario1.esPasswordSegura());
 	} 
+	
+	@Test
+	void testToStringCuentaBloqueada() {
+		usuario3.hacerLogin("asdgf", "ags");
+		usuario3.hacerLogin("asdgf", "ags");
+		usuario3.hacerLogin("asdgf", "ags");
+		assertEquals("CUENTA BLOQUEADA", usuario3.toString());
+		assertNotEquals("CUENTA BLOQUEADA", usuario2.toString());
+	}
 
 }
