@@ -1,6 +1,6 @@
 package com.auth;
 
-import static org.junit.Assert.assertFalse;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeAll;
@@ -22,7 +22,7 @@ class EjercicioCredencialesUsuarioTests {
 	}
 	
 	@Test
-	void testEsCuentaBloqueada() {
+	void testEsCuentaBloqueadaDeUsuario1() {
 		assertFalse(usuario1.esCuentaBloqueada());
 		usuario1.hacerLogin("asdgf", "ags");
 		usuario1.hacerLogin("asdgf", "ags");
@@ -48,6 +48,7 @@ class EjercicioCredencialesUsuarioTests {
 	} 
 	
 	@Test
+<<<<<<< HEAD
 	void testToStringCuentaBloqueada() {
 		usuario3.hacerLogin("asdgf", "ags");
 		usuario3.hacerLogin("asdgf", "ags");
@@ -56,4 +57,13 @@ class EjercicioCredencialesUsuarioTests {
 		assertNotEquals("CUENTA BLOQUEADA", usuario2.toString());
 	}
 
+=======
+	void testHacerLoginUsuario2() {
+		
+		assertTrue(usuario2.hacerLogin("KilMba100", "kuhsfd"));
+		assertFalse(usuario2.hacerLogin("KilMba100", "1234"));
+		assertFalse(usuario2.hacerLogin("KilMba100", null));
+		
+	}
+>>>>>>> 68f97cb1805fb0649066feee1e8fa86cae548b25
 }
