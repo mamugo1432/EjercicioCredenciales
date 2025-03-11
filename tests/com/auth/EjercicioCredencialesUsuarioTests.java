@@ -27,13 +27,13 @@ class EjercicioCredencialesUsuarioTests {
 		usuario1.hacerLogin("asdgf", "ags");
 		usuario1.hacerLogin("asdgf", "ags");
 		assertTrue(usuario1.esCuentaBloqueada());
-		usuario2.hacerLogin("KilMba101", "kuhsfd");
+
 	}
 
 	@Test
 	void testEsPasswordModificable() {
 		assertFalse(usuario1.modificarPassword("9uyhasv", "adios", "hola"));
-		assertFalse(usuario2.modificarPassword("kuhsfd", "adios", "hola"));
+		assertFalse(usuario3.modificarPassword("9uyhasvV", "adios", "hola"));
 		assertFalse(usuario2.modificarPassword("hola", "hola", "adios"));
 		assertFalse(usuario2.modificarPassword("hola", "adios", "adios"));
 		assertFalse(usuario2.modificarPassword("adios", "adios", "adios"));
