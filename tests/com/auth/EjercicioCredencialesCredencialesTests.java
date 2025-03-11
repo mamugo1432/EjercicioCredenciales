@@ -38,4 +38,10 @@ class EjercicioCredencialesCredencialesTests {
 		assertNotEquals(null,credencial.getUsername());
 	}
 	
+	@Test
+	public void testToString() {
+		assertEquals("Credencial [username=AntSan100, password=****]", credencial.toString());
+		assertNotEquals("Credencial [username=AntSan101, password=****]", credencial.toString());
+		assertNotEquals("Credencial [username=AntSan100, password=*****]", credencial.toString());
+	}
 }

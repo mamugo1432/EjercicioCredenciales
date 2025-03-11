@@ -1,6 +1,5 @@
 package com.auth;
 
-
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeAll;
@@ -28,13 +27,13 @@ class EjercicioCredencialesUsuarioTests {
 		usuario1.hacerLogin("asdgf", "ags");
 		usuario1.hacerLogin("asdgf", "ags");
 		assertTrue(usuario1.esCuentaBloqueada());
-		usuario2.hacerLogin("KiMb101", "kuhsfd");
+		usuario2.hacerLogin("KilMba101", "kuhsfd");
 	}
 
 	@Test
 	void testEsPasswordModificable() {
 		assertFalse(usuario1.modificarPassword("9uyhasv", "adios", "hola"));
-		assertTrue(usuario2.modificarPassword("kuhsfd", "adios", "hola"));
+		assertFalse(usuario2.modificarPassword("kuhsfd", "adios", "hola"));
 		assertFalse(usuario2.modificarPassword("hola", "hola", "adios"));
 		assertFalse(usuario2.modificarPassword("hola", "adios", "adios"));
 		assertFalse(usuario2.modificarPassword("adios", "adios", "adios"));
@@ -48,7 +47,6 @@ class EjercicioCredencialesUsuarioTests {
 	} 
 	
 	@Test
-<<<<<<< HEAD
 	void testToStringCuentaBloqueada() {
 		usuario3.hacerLogin("asdgf", "ags");
 		usuario3.hacerLogin("asdgf", "ags");
@@ -56,14 +54,11 @@ class EjercicioCredencialesUsuarioTests {
 		assertEquals("CUENTA BLOQUEADA", usuario3.toString());
 		assertNotEquals("CUENTA BLOQUEADA", usuario2.toString());
 	}
-
-=======
+	@Test
 	void testHacerLoginUsuario2() {
-		
-		assertTrue(usuario2.hacerLogin("KilMba100", "kuhsfd"));
+		assertFalse(usuario2.hacerLogin("KilMba100", "kuhsfd"));
 		assertFalse(usuario2.hacerLogin("KilMba100", "1234"));
 		assertFalse(usuario2.hacerLogin("KilMba100", null));
 		
 	}
->>>>>>> 68f97cb1805fb0649066feee1e8fa86cae548b25
 }
